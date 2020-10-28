@@ -9,6 +9,7 @@ template <class T, class U>
 ostream& operator << (ostream& cerr, const pair<T, U>& p) {
 	return cerr << "{" << p.first << ", " << p.second << "}" ;
 }
+
 template <class T> ostream& operator << (ostream& cerr, const vector<T>& v) {
 	cerr << "(" ;
 	for (auto it = v.begin() ; it != v.end() ; ++it) {
