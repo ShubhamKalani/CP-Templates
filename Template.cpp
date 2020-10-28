@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 
 #define int long long
+#define ld long double
 #define pb push_back
 #define ff first
 #define ss second
