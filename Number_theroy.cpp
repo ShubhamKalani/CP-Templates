@@ -6,6 +6,7 @@ int gcd(int x, int y) {
   if (y == 0) return x;
   return gcd(y, x % y);
 }
+
 /*Check Prime*/
 bool isprime(int n) {
   if (n <= 1) return false;
@@ -20,13 +21,13 @@ bool isprime(int n) {
 /* Generating Primes (Sieve of Eratosthenes)*/
 bool prime[15000105];
 void sieve(int n) {
-  forr(i, n + 1) prime[i] = 1;
-  for (int p = 2; p * p <= n; p++) {
-    if (prime[p] == true) {
-      for (int i = p * p; i <= n; i += p) prime[i] = false;
+  prime[2] = 1;
+  for (int i = 3; i <= n; i += 2) prime[i] = 1;
+  for (int i = 2; i * i <= n; ++i) {
+    if (prime[i]) {
+      for (int j = i * i; j <= n; j += (2 * i)) prime[j] = false;
     }
   }
-  prime[1] = prime[0] = 0;
 }
 
 vi primelist;
@@ -34,7 +35,8 @@ bool __primes_generated__ = 0;
 void genprimes(int n) {
   __primes_generated__ = 1;
   sieve(n + 1);
-  forr(i, 2, n + 1) if (prime[i]) primelist.pb(i);
+  for (int i = 2 i <= n; ++i)
+    if (prime[i]) primelist.pb(i);
 }
 
 /* Calculating prime factors */

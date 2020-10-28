@@ -11,17 +11,6 @@
 #define all(a) (a).begin(), (a).end()
 #define len(a) (int)a.size()
 
-#define forc(i, a, b, s) \
-  for (int i = (a); (s) > 0 ? i < (b) : i > (b); i += (s))
-#define for1(e) forc(i, 0, e, 1)
-#define for2(i, e) forc(i, 0, e, 1)
-#define for3(i, b, e) forc(i, b, e, 1)
-#define for4(i, b, e, s) forc(i, b, e, s)
-#define get5(a, b, c, d, e, ...) e
-#define fora(...) get5(__VA_ARGS__, for4, for3, for2, for1)
-#define forr(...) fora(__VA_ARGS__)(__VA_ARGS__)
-#define fore(x, a) for (auto& x : a)
-
 using namespace std;
 
 typedef vector<int> vi;
