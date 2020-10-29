@@ -9,7 +9,7 @@
 #define umap unordered_map
 #define uset unordered_set
 #define pqueue priority_queue
-#define sort(a) (a).begin(), (a).end()
+#define all(a) (a).begin(), (a).end()
 #define forn(i,s,n) for(int i = (int) s ; i < (int)n ; ++i)
 #define fore(i,s,e) for(int i = (int) s ; i >= (int)e ; --i)
 
