@@ -1,23 +1,25 @@
 #include <bits/stdc++.h>
 
 #define int long long
-#define endl "\n"
+#define ld long double
+#define pb push_back
+#define mp make_pair
+#define ff first
+#define ss second
+#define umap unordered_map
+#define uset unordered_set
+#define pqueue priority_queue
+#define sort(a) (a).begin(), (a).end()
+#define forn(i,s,n) for(int i = (int) s ; i < (int)n ; ++i)
+#define fore(i,s,e) for(int i = (int) s ; i >= (int)e ; --i)
 
-using namespace std;
+using namespace std ;
 
-template <class T, class U>
-ostream& operator << (ostream& cerr, const pair<T, U>& p) {
-	return cerr << "{" << p.first << ", " << p.second << "}" ;
-}
-
-template <class T> ostream& operator << (ostream& cerr, const vector<T>& v) {
-	cerr << "(" ;
-	for (auto it = v.begin() ; it != v.end() ; ++it) {
-		cerr << *it ;
-		if (it != prev(v.end())) cerr << ", ";
-	}
-	return cerr << ")" ;
-}
+typedef vector<int> vi;
+typedef vector<vi> vvi;
+typedef pair<int, int> pii;
+typedef map<int, int> mii;
+typedef umap<int, int> umii;
 
 template <class T> bool umin(T& a, T b) { return a > b ? (a = b, true) : false; }
 template <class T> bool umax(T& a, T b) { return a < b ? (a = b, true) : false; }
