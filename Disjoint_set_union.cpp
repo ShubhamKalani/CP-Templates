@@ -4,7 +4,7 @@ struct DSU {
 	DSU(int n) {
 		par.resize(n + 1) ;
 		sz.resize(n + 1) ;
-		iota(all(par) , 0);
+		iota(all(par), 0);
 		fill(all(sz), 0);
 	}
 	int getPar(int a) {
