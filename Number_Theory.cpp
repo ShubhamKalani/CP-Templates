@@ -24,35 +24,35 @@ void sieve(int n) {
 	}
 }
 
-vi primelist;
+vector<int> primelist;
 
-vi genprimes(int n) {
+vector<int> genprimes(int n) {
 	sieve(n + 1);
-	primelist.pb(2);
+	primelist.push_back(2);
 	for (int i = 3 ; i <= n  ; i += 2)
 		if (prime[i])
-			primelist.pb(i);
+			primelist.push_back(i);
 	return primelist;
 }
 
-vi facs ;
-vi factors(int n , bool  uniq = false) {
+vector<int> facs ;
+vector<int> factors(int n , bool  uniq = false) {
 	while (n % 2 == 0) {
 		n /= 2 ;
-		facs.pb(2);
+		facs.push_back(2);
 	}
 	for (int i = 3 ; i * i <= n ; i += 2) {
 		if (n % i == 0) {
 			while (n % i == 0) {
 				n /= i ;
-				facs.pb(i);
+				facs.push_back(i);
 			}
 		}
 	}
 	if (n > 1)
-		facs.pb(n);
+		facs.push_back(n);
 
-	sort(all(facs));
+	sort(facs.begin(), facs.end());
 	if (uniq) {
 
 	}
@@ -84,28 +84,28 @@ int count_divisors(int n , bool  uniq = false) {
 	return divcnt;
 }
 
-vi divisors(int n) {
-	vi divs ;
+vector<int> divisors(int n) {
+	vector<int> divs ;
 	for (int i = 1; i * i <= n ; ++i) {
 		if (n % i == 0) {
-			divs.pb(i);
-			if (i * i != n) divs.pb(n / i);
+			divs.push_back(i);
+			if (i * i != n) divs.push_back(n / i);
 		}
 	}
 	return divs;
 }
 
 int phi(int n) {
-	ld ans =  (ld)n ;
+	long double ans =  (long double)n ;
 	for (int i = 2 ; i * i <= n ; ++i) {
 		if (n % i == 0) {
 			while (n % i == 0) {
 				n /= i;
 			}
-			ans *= (1.0 - (1.0 / (ld)i));
+			ans *= (1.0 - (1.0 / (long double)i));
 		}
 	}
-	if (n > 1) ans *= (1.0 - (1.0 / (ld)n));
+	if (n > 1) ans *= (1.0 - (1.0 / (long double)n));
 	return (int)ans;
 
 }
